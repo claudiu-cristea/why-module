@@ -1,0 +1,19 @@
+{
+    "name": "claudiu-cristea/why-module",
+    "description": "Drush command to list all modules that depend on a given module",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Claudiu Cristea",
+            "email": "clau.cristea@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Drupal\\": "src"
+        }
+    },
+    "require": {
+        "drush/drush": "^11.0 || ^12.0"
+    }
+}
