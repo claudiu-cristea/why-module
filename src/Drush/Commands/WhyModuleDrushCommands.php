@@ -24,10 +24,17 @@ class WhyModuleDrushCommands extends DrushCommands
     #[CLI\Command(name: 'pm:why-module', aliases: ['why'])]
     #[CLI\Help(description: 'List the all modules that depend on a given module')]
     #[CLI\Argument(name: 'module', description: 'The module to check dependencies for')]
+    #[CLI\Option(name: 'only-installed', description: 'Only check for installed modules')]
     #[CLI\Bootstrap(level: DrupalBootLevels::FULL)]
-    public function why(string $module): ?string
+    public function why(string $module, array $options = [
+        'only-installed' => true,
+    ]): ?string
     {
         $list = \Drupal::service('extension.list.module')->getList();
+        if ($options['only-installed']) {
+            $installed = \Drupal::getContainer()->getParameter('container.modules');
+            $list = array_intersect_key($list, $installed);
+        }
         if (!isset($list[$module])) {
             throw new \InvalidArgumentException(dt('Invalid @module module', [
                 '@module' => $module,
