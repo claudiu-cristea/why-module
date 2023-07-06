@@ -24,14 +24,14 @@ class WhyModuleTest extends TestCase
         $this->drush('why', ['node']);
         $expected = <<<EXPECTED
             node
-             ┣━book
-             ┣━forum
-             ┣━history
-             ┃  ┗━forum
-             ┣━statistics
-             ┣━taxonomy
-             ┃  ┗━forum
-             ┗━tracker
+            ┣━book
+            ┣━forum
+            ┣━history
+            ┃ ┗━forum
+            ┣━statistics
+            ┣━taxonomy
+            ┃ ┗━forum
+            ┗━tracker
             EXPECTED;
         $this->assertSame($expected, $this->getOutput());
     }

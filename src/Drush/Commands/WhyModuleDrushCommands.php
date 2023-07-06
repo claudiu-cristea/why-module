@@ -61,7 +61,7 @@ class WhyModuleDrushCommands extends DrushCommands
         foreach (array_keys($dependants) as $delta => $module) {
             $lastFromThisLevel = $delta + 1 < count($dependants);
             $char = $lastFromThisLevel ? '┣' : '┗';
-            $stroke = $indent . " {$char}━" . $module;
+            $stroke = $indent . "{$char}━" . $module;
             if (!NestedArray::keyExists($this->tree, $path)) {
                 NestedArray::setValue($this->tree, $path, []);
             }
@@ -85,7 +85,7 @@ class WhyModuleDrushCommands extends DrushCommands
             $this->relation[$dependency] = $module;
             if (isset($this->dependencies[$module])) {
                 $char = $lastFromThisLevel ? '┃' : ' ';
-                $this->buildTree($module, $path, $indent . " $char ");
+                $this->buildTree($module, $path, $indent . "$char ");
             } else {
                 NestedArray::setValue($this->tree, [...$path, ...[$module]], []);
             }

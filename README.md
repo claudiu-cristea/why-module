@@ -13,12 +13,12 @@ dependency. Useful to understand the dependency chain in a Drupal installation.
 will output
 ```
 node
- ┣━book
- ┣━forum
- ┣━history
- ┃  ┗━forum
- ┣━statistics
- ┣━taxonomy
- ┃  ┗━forum
- ┗━tracker
+┣━book
+┣━forum
+┣━history
+┃ ┗━forum
+┣━statistics
+┣━taxonomy
+┃ ┗━forum
+┗━tracker
 ```
