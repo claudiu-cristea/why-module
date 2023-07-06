@@ -18,3 +18,5 @@ jobs:
               run: composer install --no-progress --no-ansi --no-interaction
             - name: composer site:install
               run: composer site:install
+            - name: composer phpunit
+              run: composer phpunit
