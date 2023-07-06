@@ -15,5 +15,39 @@
     },
     "require": {
         "drush/drush": "^11.0 || ^12.0"
+    },
+    "require-dev": {
+        "composer/installers": "^2",
+        "drupal/core-composer-scaffold": ">=10.0",
+        "drupal/core-recommended": ">=10.0",
+        "phpunit/phpunit": "^9.6"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "installer-paths": {
+            "build/core": ["type:drupal-core"]
+        },
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "build/"
+            },
+            "file-mapping": {
+                "[project-root]/.gitattributes": false,
+                "[project-root]/.editorconfig": false,
+                "[project-root]/.gitignore": false
+            }
+        }
+    },
+    "scripts": {
+        "site:install": "./vendor/bin/drush site:install testing --root=build --sites-subdir=default --db-url=sqlite://sites/default/files/.ht.sqlite --yes",
+        "phpunit": "./vendor/bin/phpunit tests/src/WhyModuleTest.php"
     }
 }
