@@ -13,6 +13,11 @@
             "Drupal\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Drush\\Tests\\": "tests/src"
+        }
+    },
     "require": {
         "drush/drush": "^11.0 || ^12.0"
     },
