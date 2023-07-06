@@ -1,6 +1,6 @@
 <?php
 
-namespace src;
+namespace Drush\Tests;
 
 use Drush\TestTraits\DrushTestTrait;
 use PHPUnit\Framework\TestCase;
