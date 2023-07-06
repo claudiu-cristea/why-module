@@ -16,7 +16,9 @@ jobs:
               run: composer self-update
             - name: composer install
               run: composer install --no-progress --no-ansi --no-interaction
-            - name: composer site:install
+            - name: site install
               run: composer site:install
-            - name: composer phpunit
+            - name: phpcs
+              run: composer phpcs
+            - name: phpunit
               run: composer phpunit

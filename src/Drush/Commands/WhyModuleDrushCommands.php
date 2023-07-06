@@ -40,7 +40,7 @@ class WhyModuleDrushCommands extends DrushCommands
             $this->logger()->notice(dt('No other module depends on @module', [
                 '@module' => $module,
             ]));
-            return NULL;
+            return null;
         }
 
         $this->canvas[] = $module;
@@ -86,8 +86,7 @@ class WhyModuleDrushCommands extends DrushCommands
             if (isset($this->dependencies[$module])) {
                 $char = $lastFromThisLevel ? '┃' : ' ';
                 $this->buildTree($module, $path, $indent . " $char ");
-            }
-            else {
+            } else {
                 NestedArray::setValue($this->tree, [...$path, ...[$module]], []);
             }
         }
@@ -96,7 +95,8 @@ class WhyModuleDrushCommands extends DrushCommands
     /**
      * @param array $list
      */
-    protected function buildDependencies(array $list): void {
+    protected function buildDependencies(array $list): void
+    {
         foreach ($list as $module => $data) {
             foreach ($data->info['dependencies'] as $dependencyString) {
                 $dependency = Dependency::createFromString($dependencyString)->getName();
