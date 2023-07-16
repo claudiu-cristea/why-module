@@ -1,3 +1,7 @@
+## Deprecation notice
+
+This repository is deprecated in favour of https://github.com/claudiu-cristea/drupal-dependencies
+
 [![ci](https://github.com/claudiu-cristea/why-module/actions/workflows/ci.yml/badge.svg)](https://github.com/claudiu-cristea/why-module/actions/workflows/ci.yml)
 
 ## Description
@@ -9,7 +13,7 @@ dependency. Useful to understand the dependency chain in a Drupal installation.
 
 ### Include only installed modules
 
-```bash
+```bashcated in fav
 ./vendor/bin/drush pm:why-module node
 ```
 
